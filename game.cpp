@@ -3,6 +3,8 @@
 #include <ctime>
 using namespace std;
 
+bool judge();
+
 int main(){
     int generator=0;
     int arr[4][4]={
@@ -12,10 +14,16 @@ int main(){
         {0,0,0,0}
     };
     srand(time(NULL)); //set random seed
-    while(!generator){
+    if(judge){
         generator=rand() % (4-2+1) +2;
-        if(generator==3)  generator += rand() % (2+1+1) -1;
+        if(generator==3) {
+            generator +=1;
+        }
         cout<<generator;
     }
     return 0;
+}
+
+bool judge(){
+    return true;
 }
